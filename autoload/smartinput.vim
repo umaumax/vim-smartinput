@@ -80,7 +80,6 @@ function! smartinput#define_default_rules()  "{{{2
   endif
   call urules.add('()', [
   \   {'at': '\%#', 'char': '(', 'input': '()'.left},
-  \   {'at': '\%#\_s*)', 'char': ')', 'input': '<C-r>=smartinput#_leave_block('')'')<Enter>'.right},
   \   {'at': '(\%#)', 'char': '<BS>', 'input': '<BS><Del>'},
   \   {'at': '()\%#', 'char': '<BS>', 'input': '<BS><BS>'},
   \   {'at': '\\\%#', 'char': '(', 'input': '('},
@@ -88,14 +87,12 @@ function! smartinput#define_default_rules()  "{{{2
   \ ])
   call urules.add('[]', [
   \   {'at': '\%#', 'char': '[', 'input': '[]'.left},
-  \   {'at': '\%#\_s*\]', 'char': ']', 'input': '<C-r>=smartinput#_leave_block('']'')<Enter>'.right},
   \   {'at': '\[\%#\]', 'char': '<BS>', 'input': '<BS><Del>'},
   \   {'at': '\[\]\%#', 'char': '<BS>', 'input': '<BS><BS>'},
   \   {'at': '\\\%#', 'char': '[', 'input': '['},
   \ ])
   call urules.add('{}', [
   \   {'at': '\%#', 'char': '{', 'input': '{}'.left},
-  \   {'at': '\%#\_s*}', 'char': '}', 'input': '<C-r>=smartinput#_leave_block(''}'')<Enter>'.right},
   \   {'at': '{\%#}', 'char': '<BS>', 'input': '<BS><Del>'},
   \   {'at': '{}\%#', 'char': '<BS>', 'input': '<BS><BS>'},
   \   {'at': '\\\%#', 'char': '{', 'input': '{'},
